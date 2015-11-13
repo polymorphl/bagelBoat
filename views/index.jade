@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    .row
+        .col.s12
+            h1.title-game= title
+    .row
+        .col.s12
+            | Welcome in the #{title}
+    .row
+        .col.s12
+            .btn.waves-effect.waves-light.btn-large(onclick="Materialize.toast('Bienvenue mon gars, prends un verre, un bagel et chill un peu', 7000)")
+                i.material-icons add
+                | Play

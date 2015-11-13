@@ -1,0 +1,13 @@
+<h1>Home</h1>
+<div class="divider"></div>
+
+<div class="login" ng-controller="LoginCtrl as vm">
+    <div class="container">
+        <button class="button" ng-click="vm.googleLogin()" ng-show="!vm.isLoggedIn">
+            <i class="fa fa-google-plus-square fa-2x"></i>
+            <span>Google+</span>
+        </button>
+    </div>
+</div>
+
+<div ui-view></div>

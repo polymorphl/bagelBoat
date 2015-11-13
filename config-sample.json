@@ -1,0 +1,28 @@
+{
+    "vhost": "http://localhost:9000",
+    "file_start": "./bin/www",
+    "file_nodemon": "server.js",
+    "array_nodemon": ["views", "routes", "server.js"],
+    "enable_js_hint": false,
+    "path": {
+        "js": ["public/js/base.js", "public/js/controllers.js"],
+        "jshint": ".jshintrc",
+        "jshint_files": ["app/base.js", "app/controllers.js"],
+        "sass": ["scss/*.scss"],
+        "css": "public/dist",
+        "sourcemap_js": "../dist",
+        "sourcemap_css": ".",
+        "dist_js": "public/dist",
+        "dist_lib": "public/dist"
+    },
+    "sass_opt": {
+        "outputStyle": "compressed"
+    },
+    "build_appname": "bundle.js",
+    "build_libname": "lib.js",
+    "sass_error": "Error SCSS\nLook in the console for details",
+    "browserSync": {
+        "files": ["public/**/*.*"],
+        "browser": "google chrome"
+    }
+}

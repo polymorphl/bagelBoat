@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title= title
+        link(rel='stylesheet', href='/dist/main.css')
+body(ng-app= title)
+    .bagelsvg
+        block bagelsvg
+    ui-view
+    .container
+        block content
+    block foot
+        #footer
+            div.about-page
+                p Bagel by Cindy Hu from the Noun Project
+                p realised by
+                    a(href="https://github.com/TonyChG/" taget="_blank") TonyChG
+                    | +
+                    a(href="https://github.com/polymorphl" taget="_blank") Polymorphl
+    script(src="dist/lib.js")
+    script(src='/dist/bundle.js')
