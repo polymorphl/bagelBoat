@@ -2,7 +2,7 @@
 'use strict';
 
 var bagelBoat = angular.module('bagelBoat', ['ui.router', 'firebase'])
-                    .constant('firebaseUrl', "https://battleship-io.firebaseio.com");
+                .constant('firebaseUrl', "https://battleship-io.firebaseio.com");
 
 bagelBoat.config(function($stateProvider, $urlRouterProvider, firebaseUrl) {
   //

@@ -46,6 +46,8 @@ var pkg_version = require('./package.json').version;
 ** ## TASKS
 */
 
+var BROWSER_SYNC_RELOAD_DELAY = 500;
+
 // Get copyright using NodeJs file system
 var getCopyright = function () {
     return fs.readFileSync('Copyright');
