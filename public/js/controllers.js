@@ -29,7 +29,7 @@ function LoginCtrl($firebaseAuth, $firebaseObject, $state, firebaseUrl) {
 
     function authDataCallback(authData) {
         if (authData) {
-            console.log("User " + authData.uid + " is logged in with " + authData.provider);
+            console.log("[newUser] " + authData.uid + " is logged in with method: " + authData.provider);
             vm.isLoggedIn = true;
             var user = $firebaseObject(ref.child('users').child(authData.uid));
             user.$loaded().then(function () {
@@ -53,9 +53,13 @@ function LoginCtrl($firebaseAuth, $firebaseObject, $state, firebaseUrl) {
         }
     }
 
+    vm.navigateTo = function (state) {
+        $state.go(state);
+    }
+
     vm.logout = function () {
         ref.unauth();
-        $state.go('home');
+        vm.navigateTo('home');
     }
 
     vm.firebaseAuthLogin = function(provider){
@@ -73,7 +77,7 @@ function LoginCtrl($firebaseAuth, $firebaseObject, $state, firebaseUrl) {
     vm.anonymous = function() {
         console.log(authObj);
         authObj.$authAnonymously().then(function(authData) {
-            console.log("Authenticated successfully with payload:", authData);
+            vm.navigateTo('logged');
         });
     }
 

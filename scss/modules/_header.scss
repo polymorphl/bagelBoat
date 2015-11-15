@@ -3,3 +3,39 @@
     margin-top: 70px;
     text-align: center;
 }
+
+.header {
+    height: 240px;
+    header {
+        height: 100%;
+        .wrap-svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 240px;
+            width: 400px;
+        }
+        #svg {
+            position: relative;
+            transform: scale(.3);
+            width: 600px;
+            height: 700px;
+            top: -240px;
+            left: 0;
+
+            .path {
+                @include transition(all .3s ease);
+            }
+            .circle {
+                @include transition(all .4s ease);
+                animation: dash 6s cubic-bezier(0.18, 0.89, 0.32, 1.28) alternate infinite;
+            }
+        }
+    }
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
